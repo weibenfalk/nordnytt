@@ -13,6 +13,7 @@ export default function PaginationButton({ href, direction, isDisabled }: Props)
   return (
     <Link
       href={href}
+      aria-label={direction === "back" ? "previous page" : "next page"}
       role="button"
       className={`${isDisabled ? 'pointer-events-none text-gray-300' : ''} flex items-center justify-center rounded w-8 h-8 bg-gray-400 select-none`}
     >
