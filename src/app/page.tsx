@@ -12,7 +12,7 @@ type Props = {
 export default async function Home({ searchParams }: Props) {
   const currentPage = Number(searchParams?.page) || 1;
   const paginatedStories = await getTopStories((currentPage - 1) * STORIES_PER_PAGE, STORIES_PER_PAGE);
-  const totalPages = paginatedStories.totalStories / STORIES_PER_PAGE;
+  const totalPages = Math.ceil(paginatedStories.totalStories / STORIES_PER_PAGE);
 
   return (
     <main>
